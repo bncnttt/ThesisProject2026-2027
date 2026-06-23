@@ -423,8 +423,8 @@ def get_disaster_posts(search_limit: int = 5, days_back: int = 5, graph_limit: i
                         
                         "processed": False, 
                         "social_graph": {
-                            "follower_count": official_follower_count,   
-                            "following_count": official_following_count, 
+                            "follower_count": len(followers_list) if followers_list else 0,
+                            "following_count": len(following_list) if following_list else 0,
                             "followers": followers_list,
                             "following": following_list,
                             "mutual_ties": mutual_ties
@@ -443,9 +443,9 @@ def get_disaster_posts(search_limit: int = 5, days_back: int = 5, graph_limit: i
                             "_id": author_did,
                             "handle": author_handle,
                             "display_name": display_name,
-                            "follower_count": official_follower_count,
-                            "following_count": official_following_count,
-                            "mutual_tie_count": len(mutual_ties),
+                            "follower_count": len(followers_list) if followers_list else 0,
+                            "following_count": len(following_list) if following_list else 0,
+                            "mutual_tie_count": len(mutual_ties) if mutual_ties else 0,
                             "followers": followers_list,
                             "following": following_list,
                             "mutual_ties": mutual_ties,
